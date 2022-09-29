@@ -1,9 +1,12 @@
 import departmentsJSON from '../../assets/formDatas.json'
 import store from '../../store/store'
 import { useState } from 'react'
+import Modale from '../modale/Modale'
 
 function CreateEmployeeForm() {
+  const storeInstance = store()
   const { departments, states } = departmentsJSON
+  const [showModale, setShowModale] = useState(false)
 
   const [inputs, setInputs] = useState({
     firstName: '',
@@ -16,6 +19,10 @@ function CreateEmployeeForm() {
     state: states[0].name,
     zipCode: '',
   })
+
+  const onHideModale = () => {
+    setShowModale(false)
+  }
 
   const departmentsOptions = departments.map((department) => {
     return <option key={department}>{department}</option>
@@ -36,89 +43,91 @@ function CreateEmployeeForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const storeInstance = store()
-
     storeInstance.addEmployee(inputs)
+    setShowModale(true)
   }
 
   return (
-    <form action="#" id="create-employee" onSubmit={handleSubmit}>
-      <label htmlFor="firstName">First Name</label>
-      <input
-        type="text"
-        id="firstName"
-        onChange={handleInputs}
-        value={inputs.firstName}
-      />
-
-      <label htmlFor="lastName">Last Name</label>
-      <input
-        type="text"
-        id="lastName"
-        onChange={handleInputs}
-        value={inputs.lastName}
-      />
-
-      <label htmlFor="birthDate">Date of Birth</label>
-      <input
-        id="birthDate"
-        type="text"
-        onChange={handleInputs}
-        value={inputs.birthDate}
-      />
-
-      <label htmlFor="starteDate">Start Date</label>
-      <input
-        id="starteDate"
-        type="text"
-        onChange={handleInputs}
-        value={inputs.starteDate}
-      />
-
-      <fieldset className="address">
-        <legend>Address</legend>
-        <label htmlFor="street">Street</label>
+    <>
+      <form action="#" id="create-employee" onSubmit={handleSubmit}>
+        <label htmlFor="firstName">First Name</label>
         <input
-          id="street"
+          type="text"
+          id="firstName"
+          onChange={handleInputs}
+          value={inputs.firstName}
+        />
+
+        <label htmlFor="lastName">Last Name</label>
+        <input
+          type="text"
+          id="lastName"
+          onChange={handleInputs}
+          value={inputs.lastName}
+        />
+
+        <label htmlFor="birthDate">Date of Birth</label>
+        <input
+          id="birthDate"
           type="text"
           onChange={handleInputs}
-          value={inputs.street}
+          value={inputs.birthDate}
         />
-        <label htmlFor="city">City</label>
+
+        <label htmlFor="starteDate">Start Date</label>
         <input
-          id="city"
+          id="starteDate"
           type="text"
           onChange={handleInputs}
-          value={inputs.city}
+          value={inputs.starteDate}
         />
-        <label htmlFor="state">State</label>
+
+        <fieldset className="address">
+          <legend>Address</legend>
+          <label htmlFor="street">Street</label>
+          <input
+            id="street"
+            type="text"
+            onChange={handleInputs}
+            value={inputs.street}
+          />
+          <label htmlFor="city">City</label>
+          <input
+            id="city"
+            type="text"
+            onChange={handleInputs}
+            value={inputs.city}
+          />
+          <label htmlFor="state">State</label>
+          <select
+            name="state"
+            id="state"
+            onChange={handleInputs}
+            value={inputs.state}
+          >
+            {statesOptions}
+          </select>
+          <label htmlFor="zipCode">Zip Code</label>
+          <input
+            id="zipCode"
+            type="number"
+            onChange={handleInputs}
+            value={inputs.zipCode}
+          />
+        </fieldset>
+        <label htmlFor="department">Department</label>
         <select
-          name="state"
-          id="state"
+          name="department"
+          id="department"
           onChange={handleInputs}
-          value={inputs.state}
+          value={inputs.department}
         >
-          {statesOptions}
+          {departmentsOptions}
         </select>
-        <label htmlFor="zipCode">Zip Code</label>
-        <input
-          id="zipCode"
-          type="number"
-          onChange={handleInputs}
-          value={inputs.zipCode}
-        />
-      </fieldset>
-      <label htmlFor="department">Department</label>
-      <select
-        name="department"
-        id="department"
-        onChange={handleInputs}
-        value={inputs.department}
-      >
-        {departmentsOptions}
-      </select>
-      <button type="submit">Save</button>
-    </form>
+        <button type="submit">Save</button>
+      </form>
+      {showModale && <Modale hideModale={onHideModale} />}
+    </>
   )
 }
 
