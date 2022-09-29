@@ -1,10 +1,10 @@
-import CreateForm from '../features/employee/CreateForm'
+import CreateEmployeeForm from '../components/CreateEmployeeForm/CreateEmployeeForm'
 
 function Home() {
   return (
     <main>
       <h2>Create Employee</h2>
-      <CreateForm />
+      <CreateEmployeeForm />
     </main>
   )
 }
