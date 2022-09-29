@@ -2,7 +2,7 @@ import CreateEmployeeForm from '../components/CreateEmployeeForm/CreateEmployeeF
 
 function Home() {
   return (
-    <main>
+    <main className="home">
       <h2>Create Employee</h2>
       <CreateEmployeeForm />
     </main>

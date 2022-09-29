@@ -1,0 +1,16 @@
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 120px;
+  padding: 20px;
+  & nav {
+    & .active-link {
+      text-decoration: underline;
+    }
+    & ul {
+      display: flex;
+      gap: 15px;
+    }
+  }
+}

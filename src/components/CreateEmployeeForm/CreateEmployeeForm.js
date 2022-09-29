@@ -5,7 +5,9 @@ import Modale from '../modale/Modale'
 
 function CreateEmployeeForm() {
   const storeInstance = store()
+
   const { departments, states } = departmentsJSON
+
   const [showModale, setShowModale] = useState(false)
 
   const [inputs, setInputs] = useState({
@@ -43,87 +45,110 @@ function CreateEmployeeForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
     storeInstance.addEmployee(inputs)
+
     setShowModale(true)
   }
 
   return (
     <>
       <form action="#" id="create-employee" onSubmit={handleSubmit}>
-        <label htmlFor="firstName">First Name</label>
-        <input
-          type="text"
-          id="firstName"
-          onChange={handleInputs}
-          value={inputs.firstName}
-        />
+        <div className="inputs-wrapper">
+          <div className="subfield">
+            <label htmlFor="firstName">
+              First Name
+              <input
+                type="text"
+                id="firstName"
+                onChange={handleInputs}
+                value={inputs.firstName}
+              />
+            </label>
 
-        <label htmlFor="lastName">Last Name</label>
-        <input
-          type="text"
-          id="lastName"
-          onChange={handleInputs}
-          value={inputs.lastName}
-        />
+            <label htmlFor="lastName">
+              Last Name
+              <input
+                type="text"
+                id="lastName"
+                onChange={handleInputs}
+                value={inputs.lastName}
+              />
+            </label>
 
-        <label htmlFor="birthDate">Date of Birth</label>
-        <input
-          id="birthDate"
-          type="text"
-          onChange={handleInputs}
-          value={inputs.birthDate}
-        />
+            <label htmlFor="birthDate">
+              Date of Birth
+              <input
+                id="birthDate"
+                type="date"
+                onChange={handleInputs}
+                value={inputs.birthDate}
+              />
+            </label>
 
-        <label htmlFor="starteDate">Start Date</label>
-        <input
-          id="starteDate"
-          type="text"
-          onChange={handleInputs}
-          value={inputs.starteDate}
-        />
-
-        <fieldset className="address">
-          <legend>Address</legend>
-          <label htmlFor="street">Street</label>
-          <input
-            id="street"
-            type="text"
-            onChange={handleInputs}
-            value={inputs.street}
-          />
-          <label htmlFor="city">City</label>
-          <input
-            id="city"
-            type="text"
-            onChange={handleInputs}
-            value={inputs.city}
-          />
-          <label htmlFor="state">State</label>
-          <select
-            name="state"
-            id="state"
-            onChange={handleInputs}
-            value={inputs.state}
-          >
-            {statesOptions}
-          </select>
-          <label htmlFor="zipCode">Zip Code</label>
-          <input
-            id="zipCode"
-            type="number"
-            onChange={handleInputs}
-            value={inputs.zipCode}
-          />
-        </fieldset>
-        <label htmlFor="department">Department</label>
-        <select
-          name="department"
-          id="department"
-          onChange={handleInputs}
-          value={inputs.department}
-        >
-          {departmentsOptions}
-        </select>
+            <label htmlFor="starteDate">
+              Start Date
+              <input
+                id="starteDate"
+                type="date"
+                onChange={handleInputs}
+                value={inputs.starteDate}
+              />
+            </label>
+            <label htmlFor="department">
+              Department
+              <select
+                name="department"
+                id="department"
+                onChange={handleInputs}
+                value={inputs.department}
+              >
+                {departmentsOptions}
+              </select>
+            </label>
+          </div>
+          <fieldset>
+            <legend>Address</legend>
+            <label htmlFor="street">
+              Street
+              <input
+                id="street"
+                type="text"
+                onChange={handleInputs}
+                value={inputs.street}
+              />
+            </label>
+            <label htmlFor="city">
+              City
+              <input
+                id="city"
+                type="text"
+                onChange={handleInputs}
+                value={inputs.city}
+              />
+            </label>
+            <label htmlFor="state">
+              State
+              <select
+                name="state"
+                id="state"
+                onChange={handleInputs}
+                value={inputs.state}
+              >
+                {statesOptions}
+              </select>
+            </label>
+            <label htmlFor="zipCode">
+              Zip Code
+              <input
+                id="zipCode"
+                type="number"
+                onChange={handleInputs}
+                value={inputs.zipCode}
+              />
+            </label>
+          </fieldset>
+        </div>
         <button type="submit">Save</button>
       </form>
       {showModale && <Modale hideModale={onHideModale} />}

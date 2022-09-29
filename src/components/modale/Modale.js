@@ -6,7 +6,7 @@ function Modale({ hideModale }) {
   }
 
   return (
-    <section className="modale" onClick={handleClose}>
+    <section onClick={handleClose}>
       <div>
         <img src={closeSVG} alt="Close button" />
         <div>Employee Created!</div>
