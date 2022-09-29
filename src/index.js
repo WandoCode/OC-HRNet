@@ -8,3 +8,5 @@ root.render(
     <App />
   </React.StrictMode>
 )
+// TODO: (mentor): Il faut faire un composant Date Picker pour remplacer le input:date? => OUI, VOIR LES ISSUES
+// TODO: (mentor): Idem pour le select (dropdown)? OUI => VOIR LES ISSUES
