@@ -1,0 +1,29 @@
+.modale {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.452);
+  display: flex;
+  &-dialog {
+    margin: auto;
+    width: max-content;
+    padding: 30px 50px;
+    background-color: aliceblue;
+    position: relative;
+    border-radius: 10px;
+
+    & button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 36px;
+      width: 36px;
+      transform: translate(50%, -50%);
+      background-color: white;
+      border-radius: 100%;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}
