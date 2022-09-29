@@ -1,5 +1,5 @@
 import departmentsJSON from '../../assets/formDatas.json'
-import store from '../../store/user'
+import store from '../../store/store'
 import { useState } from 'react'
 
 function CreateEmployeeForm() {
@@ -38,7 +38,7 @@ function CreateEmployeeForm() {
     e.preventDefault()
     const storeInstance = store()
 
-    storeInstance.addUser(inputs)
+    storeInstance.addEmployee(inputs)
   }
 
   return (

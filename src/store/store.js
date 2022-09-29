@@ -11,7 +11,7 @@ const store = () => {
 
   const createId = () => employees.length
 
-  const createUser = (formDatas) => {
+  const createEmployee = (formDatas) => {
     const {
       firstName,
       lastName,
@@ -40,14 +40,16 @@ const store = () => {
     }
   }
 
-  const addUser = (formDatas) => {
+  const addEmployee = (formDatas) => {
     console.log(employees)
-    const user = createUser(formDatas)
-    employees.push(user)
+    const employee = createEmployee(formDatas)
+    employees.push(employee)
     localStorage.setItem('employees', JSON.stringify(employees))
   }
 
-  return { addUser }
+  const getEmployees = () => employees
+
+  return { addEmployee, getEmployees }
 }
 
 export default store
