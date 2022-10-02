@@ -2,6 +2,7 @@ import departmentsJSON from '../../assets/formDatas.json'
 import store from '../../store/store'
 import { useState } from 'react'
 import Modale from '../modale/Modale'
+import Dropdown from '../Dropdown/Dropdown'
 
 function CreateEmployeeForm() {
   const storeInstance = store()
@@ -25,10 +26,6 @@ function CreateEmployeeForm() {
   const onHideModale = () => {
     setShowModale(false)
   }
-
-  const departmentsOptions = departments.map((department) => {
-    return <option key={department}>{department}</option>
-  })
 
   const statesOptions = states.map((state) => {
     return <option key={state.name}>{state.name}</option>
@@ -56,7 +53,7 @@ function CreateEmployeeForm() {
       <form action="#" id="create-employee" onSubmit={handleSubmit}>
         <div className="inputs-wrapper">
           <div className="subfield">
-            <label htmlFor="firstName">
+            <label htmlFor="firstName" className="label">
               First Name
               <input
                 type="text"
@@ -66,7 +63,7 @@ function CreateEmployeeForm() {
               />
             </label>
 
-            <label htmlFor="lastName">
+            <label htmlFor="lastName" className="label">
               Last Name
               <input
                 type="text"
@@ -76,7 +73,7 @@ function CreateEmployeeForm() {
               />
             </label>
 
-            <label htmlFor="birthDate">
+            <label htmlFor="birthDate" className="label">
               Date of Birth
               <input
                 id="birthDate"
@@ -86,7 +83,7 @@ function CreateEmployeeForm() {
               />
             </label>
 
-            <label htmlFor="starteDate">
+            <label htmlFor="starteDate" className="label">
               Start Date
               <input
                 id="starteDate"
@@ -95,21 +92,18 @@ function CreateEmployeeForm() {
                 value={inputs.starteDate}
               />
             </label>
-            <label htmlFor="department">
-              Department
-              <select
-                name="department"
-                id="department"
-                onChange={handleInputs}
-                value={inputs.department}
-              >
-                {departmentsOptions}
-              </select>
-            </label>
+
+            <Dropdown
+              choicesArray={departments}
+              currValue={inputs.department}
+              onChoice={handleInputs}
+              name="department"
+              label="Department"
+            />
           </div>
           <fieldset>
             <legend>Address</legend>
-            <label htmlFor="street">
+            <label htmlFor="street" className="label">
               Street
               <input
                 id="street"
@@ -118,7 +112,7 @@ function CreateEmployeeForm() {
                 value={inputs.street}
               />
             </label>
-            <label htmlFor="city">
+            <label htmlFor="city" className="label">
               City
               <input
                 id="city"
@@ -127,7 +121,7 @@ function CreateEmployeeForm() {
                 value={inputs.city}
               />
             </label>
-            <label htmlFor="state">
+            <label htmlFor="state" className="label">
               State
               <select
                 name="state"
@@ -138,7 +132,7 @@ function CreateEmployeeForm() {
                 {statesOptions}
               </select>
             </label>
-            <label htmlFor="zipCode">
+            <label htmlFor="zipCode" className="label">
               Zip Code
               <input
                 id="zipCode"
@@ -149,7 +143,9 @@ function CreateEmployeeForm() {
             </label>
           </fieldset>
         </div>
-        <button type="submit">Save</button>
+        <button type="submit" className="button">
+          Save
+        </button>
       </form>
       {showModale && <Modale hideModale={onHideModale} />}
     </>
