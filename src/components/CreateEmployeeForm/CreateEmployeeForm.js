@@ -27,17 +27,17 @@ function CreateEmployeeForm() {
     setShowModale(false)
   }
 
-  const statesOptions = states.map((state) => {
-    return <option key={state.name}>{state.name}</option>
+  const statesChoices = states.map((state) => {
+    return state.name
   })
 
   const handleInputs = (e) => {
     const val = e.target.value
-    const key = e.target.id
-
+    const key = e.target.name
     const newInputs = { ...inputs }
     newInputs[key] = val
     setInputs(newInputs)
+    console.log(newInputs)
   }
 
   const handleSubmit = (e) => {
@@ -121,17 +121,14 @@ function CreateEmployeeForm() {
                 value={inputs.city}
               />
             </label>
-            <label htmlFor="state" className="label">
-              State
-              <select
-                name="state"
-                id="state"
-                onChange={handleInputs}
-                value={inputs.state}
-              >
-                {statesOptions}
-              </select>
-            </label>
+            <Dropdown
+              choicesArray={statesChoices}
+              currValue={inputs.state}
+              onChoice={handleInputs}
+              name="state"
+              label="state"
+            />
+
             <label htmlFor="zipCode" className="label">
               Zip Code
               <input
