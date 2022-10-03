@@ -124,6 +124,12 @@ form#create-employee .button:hover {
   background-color: #aeaeae;
   cursor: pointer;
 }
+form#create-employee .react-datepicker__day--outside-month {
+  color: rgb(175, 175, 175);
+}
+form#create-employee .customDay-datePicker:hover {
+  background-color: rgb(195, 221, 255);
+}
 
 .modale {
   position: fixed;
@@ -158,6 +164,7 @@ form#create-employee .button:hover {
 
 .dropdown {
   position: relative;
+  width: 100%;
 }
 .dropdown__selected {
   background-color: rgb(255, 255, 255);

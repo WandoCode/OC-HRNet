@@ -2,7 +2,7 @@ import { useState } from 'react'
 import arrowUp from '../../assets/caret-up.svg'
 import arrowDown from '../../assets/caret-down.svg'
 import OutsideClickHandler from 'react-outside-click-handler'
-function Dropdown({ choicesArray, onChoice, name, label }) {
+function Dropdown({ choicesArray, onChoice, name }) {
   const [openMenu, setOpenMenu] = useState(false)
   const [currValue, setCurrValue] = useState(choicesArray[0])
 
@@ -38,14 +38,13 @@ function Dropdown({ choicesArray, onChoice, name, label }) {
         setOpenMenu(false)
       }}
     >
-      <div className="dropdown label">
-        {label}
+      <div className="dropdown">
         <button
           type="button"
           onClick={handleBtnClick}
           className="dropdown__selected"
         >
-          {currValue}{' '}
+          {currValue}
           {openMenu ? (
             <img src={arrowUp} alt="arrow up" />
           ) : (

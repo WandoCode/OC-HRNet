@@ -3,10 +3,11 @@ import store from '../../store/store'
 import { useState } from 'react'
 import Modale from '../modale/Modale'
 import Dropdown from '../Dropdown/Dropdown'
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
 
 function CreateEmployeeForm() {
   const storeInstance = store()
-
   const { departments, states } = departmentsJSON
 
   const [showModale, setShowModale] = useState(false)
@@ -15,7 +16,7 @@ function CreateEmployeeForm() {
     firstName: '',
     lastName: '',
     birthDate: '',
-    starteDate: '',
+    startDate: '',
     department: departments[0],
     street: '',
     city: '',
@@ -32,12 +33,12 @@ function CreateEmployeeForm() {
   })
 
   const handleInputs = (e) => {
+    console.log(e)
     const val = e.target.value
     const key = e.target.name
     const newInputs = { ...inputs }
     newInputs[key] = val
     setInputs(newInputs)
-    console.log(newInputs)
   }
 
   const handleSubmit = (e) => {
@@ -75,31 +76,34 @@ function CreateEmployeeForm() {
 
             <label htmlFor="birthDate" className="label">
               Date of Birth
-              <input
-                id="birthDate"
-                type="date"
-                onChange={handleInputs}
-                value={inputs.birthDate}
+              <DatePicker
+                selected={inputs.birthDate}
+                onChange={(d) => setInputs({ ...inputs, birthDate: d })}
+                dateFormat="dd/MM/yyyy"
+                dayClassName={(date) => {
+                  'customDay-datePicker'
+                }}
               />
             </label>
 
-            <label htmlFor="starteDate" className="label">
+            <label htmlFor="startDate" className="label">
               Start Date
-              <input
-                id="starteDate"
-                type="date"
-                onChange={handleInputs}
-                value={inputs.starteDate}
+              <DatePicker
+                selected={inputs.startDate}
+                onChange={(d) => setInputs({ ...inputs, startDate: d })}
+                calendarClassName="form_datePicker"
               />
             </label>
 
-            <Dropdown
-              choicesArray={departments}
-              currValue={inputs.department}
-              onChoice={handleInputs}
-              name="department"
-              label="Department"
-            />
+            <label htmlFor="startDate" className="label">
+              Department
+              <Dropdown
+                choicesArray={departments}
+                currValue={inputs.department}
+                onChoice={handleInputs}
+                name="department"
+              />
+            </label>
           </div>
           <fieldset>
             <legend>Address</legend>
@@ -121,14 +125,15 @@ function CreateEmployeeForm() {
                 value={inputs.city}
               />
             </label>
-            <Dropdown
-              choicesArray={statesChoices}
-              currValue={inputs.state}
-              onChoice={handleInputs}
-              name="state"
-              label="state"
-            />
-
+            <label htmlFor="city" className="label">
+              State
+              <Dropdown
+                choicesArray={statesChoices}
+                currValue={inputs.state}
+                onChoice={handleInputs}
+                name="state"
+              />
+            </label>
             <label htmlFor="zipCode" className="label">
               Zip Code
               <input
