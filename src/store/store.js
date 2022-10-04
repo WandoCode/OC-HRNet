@@ -41,7 +41,6 @@ const store = () => {
   }
 
   const addEmployee = (formDatas) => {
-    console.log(employees)
     const employee = createEmployee(formDatas)
     employees.push(employee)
     localStorage.setItem('employees', JSON.stringify(employees))

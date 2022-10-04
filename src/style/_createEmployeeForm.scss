@@ -80,13 +80,15 @@ form#create-employee {
     }
   }
 
-  & .react-datepicker__day--outside-month {
-    color: rgb(175, 175, 175);
-  }
-
-  & .customDay-datePicker {
-    &:hover {
-      background-color: rgb(195, 221, 255);
+  & .react-datepicker {
+    &__day {
+      font-family: 'Poppins', sans-serif;
+      &:hover {
+        background-color: rgb(195, 221, 255);
+      }
+      &--outside-month {
+        color: rgb(175, 175, 175);
+      }
     }
   }
 }

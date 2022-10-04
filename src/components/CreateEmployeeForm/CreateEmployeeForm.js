@@ -80,9 +80,6 @@ function CreateEmployeeForm() {
                 selected={inputs.birthDate}
                 onChange={(d) => setInputs({ ...inputs, birthDate: d })}
                 dateFormat="dd/MM/yyyy"
-                dayClassName={(date) => {
-                  'customDay-datePicker'
-                }}
               />
             </label>
 
@@ -91,7 +88,7 @@ function CreateEmployeeForm() {
               <DatePicker
                 selected={inputs.startDate}
                 onChange={(d) => setInputs({ ...inputs, startDate: d })}
-                calendarClassName="form_datePicker"
+                dateFormat="dd/MM/yyyy"
               />
             </label>
 

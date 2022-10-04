@@ -11,14 +11,14 @@
     padding: 30px 50px;
     background-color: aliceblue;
     position: relative;
-    border-radius: 10px;
+    border-radius: 5px;
 
     & button {
       position: absolute;
       top: 0;
       right: 0;
-      height: 36px;
-      width: 36px;
+      height: 18px;
+      width: 18px;
       transform: translate(50%, -50%);
       background-color: white;
       border-radius: 100%;
