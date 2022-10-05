@@ -33,11 +33,11 @@ function CreateEmployeeForm() {
   })
 
   const handleInputs = (e) => {
-    console.log(e)
     const val = e.target.value
     const key = e.target.name
     const newInputs = { ...inputs }
     newInputs[key] = val
+    console.log(newInputs)
     setInputs(newInputs)
   }
 
@@ -59,6 +59,7 @@ function CreateEmployeeForm() {
               <input
                 type="text"
                 id="firstName"
+                name="firstName"
                 onChange={handleInputs}
                 value={inputs.firstName}
               />
@@ -69,6 +70,7 @@ function CreateEmployeeForm() {
               <input
                 type="text"
                 id="lastName"
+                name="lastName"
                 onChange={handleInputs}
                 value={inputs.lastName}
               />
@@ -108,6 +110,7 @@ function CreateEmployeeForm() {
               Street
               <input
                 id="street"
+                name="street"
                 type="text"
                 onChange={handleInputs}
                 value={inputs.street}
@@ -117,6 +120,7 @@ function CreateEmployeeForm() {
               City
               <input
                 id="city"
+                name="city"
                 type="text"
                 onChange={handleInputs}
                 value={inputs.city}
@@ -135,6 +139,7 @@ function CreateEmployeeForm() {
               Zip Code
               <input
                 id="zipCode"
+                name="zipCode"
                 type="number"
                 onChange={handleInputs}
                 value={inputs.zipCode}
