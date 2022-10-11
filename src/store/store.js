@@ -16,7 +16,7 @@ const store = () => {
       firstName,
       lastName,
       birthDate,
-      starteDate,
+      startDate,
       department,
       street,
       city,
@@ -29,7 +29,7 @@ const store = () => {
       firstName,
       lastName,
       birthDate,
-      starteDate,
+      startDate,
       department,
       address: {
         street,

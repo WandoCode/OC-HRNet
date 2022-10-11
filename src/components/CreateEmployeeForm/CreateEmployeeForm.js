@@ -37,7 +37,6 @@ function CreateEmployeeForm() {
     const key = e.target.name
     const newInputs = { ...inputs }
     newInputs[key] = val
-    console.log(newInputs)
     setInputs(newInputs)
   }
 
@@ -94,7 +93,7 @@ function CreateEmployeeForm() {
               />
             </label>
 
-            <label htmlFor="startDate" className="label">
+            <label htmlFor="department" className="label">
               Department
               <Dropdown
                 choicesArray={departments}
