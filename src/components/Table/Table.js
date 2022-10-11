@@ -1,11 +1,8 @@
 function Table({ headers, datas }) {
-  console.log(headers)
-
   const headersDOM = () => {
-    if (!headers) return
-    const keys = Object.keys(datas[0])
+    const keys = Object.keys(headers)
     return keys.map((header) => {
-      return <th key={header}>{header}</th>
+      return <th key={header}>{headers[header]}</th>
     })
   }
 

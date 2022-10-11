@@ -6,15 +6,37 @@ function Employees() {
 
   const formatEmployeesObj = () => {
     return employees.map((employee) => {
-      return
+      return {
+        firstName: employee.firstName,
+        lastName: employee.lastName,
+        startDate: employee.startDate,
+        department: employee.department,
+        birthDate: employee.birthDate,
+        street: employee.address.street,
+        city: employee.address.city,
+        state: employee.address.state,
+        zipCode: employee.address.zipCode,
+      }
     })
   }
-  console.log(employees)
+
+  const headers = {
+    firstName: 'First Name',
+    lastName: 'Last Name',
+    startDate: 'Start Date',
+    department: 'Department',
+    birthDate: 'Date of Birth',
+    street: 'Street',
+    city: 'City',
+    state: 'State',
+    zipCode: 'Zip Code',
+  }
+
   return (
     <main>
       <h2>Current Employees</h2>
       <div className="section">
-        <Table headers={true} datas={employees} />
+        <Table headers={headers} datas={formatEmployeesObj()} />
       </div>
     </main>
   )
