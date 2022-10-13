@@ -221,10 +221,13 @@ form#create-employee .react-datepicker__day--outside-month {
 .table {
   width: 100%;
 }
-.table .select__label {
-  padding: 0 4px;
+.table table {
+  width: 100%;
 }
-.table tbody td {
+.table table thead th {
+  padding: 15px 0;
+}
+.table table tbody td {
   max-width: 100px;
   width: 11%;
   overflow: hidden;
@@ -232,14 +235,11 @@ form#create-employee .react-datepicker__day--outside-month {
   text-align: center;
   white-space: nowrap;
 }
-.table tbody tr:nth-child(2n+1) {
+.table table tbody tr:nth-child(2n+1) {
   background-color: rgb(255, 255, 255);
 }
-.table tbody tr:hover {
+.table table tbody tr:hover {
   background-color: rgb(228, 228, 228);
-}
-.table table {
-  width: 100%;
 }
 .table__navigation {
   padding: 10px 0;
