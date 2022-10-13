@@ -32,6 +32,9 @@ body {
   background-color: aliceblue;
 }
 
+main {
+  width: 70vw;
+}
 header {
   display: flex;
   flex-direction: column;
@@ -208,4 +211,27 @@ form#create-employee .react-datepicker__day--outside-month {
 }
 .dropdown__label:hover {
   background-color: rgb(195, 221, 255);
+}
+
+.currentEmployees h2 {
+  margin-bottom: 20px;
+}
+
+.table {
+  width: 100%;
+}
+.table .select__label {
+  padding: 0 4px;
+}
+.table tbody tr:nth-child(2n+1) {
+  background-color: rgb(255, 255, 255);
+}
+.table tbody tr:hover {
+  background-color: rgb(228, 228, 228);
+}
+.table table {
+  width: 100%;
+}
+.table__navigation {
+  padding: 10px 0;
 }/*# sourceMappingURL=index.css.map */

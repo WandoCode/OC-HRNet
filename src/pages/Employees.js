@@ -1,4 +1,4 @@
-import Table from '../components/Table/Table'
+import Table from 'plugin-table-oc'
 import store from '../store/store'
 function Employees() {
   const myStore = store()
@@ -33,7 +33,7 @@ function Employees() {
   }
 
   return (
-    <main>
+    <main className="currentEmployees">
       <h2>Current Employees</h2>
       <div className="section">
         <Table headers={headers} datas={formatEmployeesObj()} />
