@@ -1,5 +1,6 @@
 import Table from 'plugin-table-oc'
 import store from '../store/store'
+import dayjs from 'dayjs'
 function Employees() {
   const myStore = store()
   const employees = myStore.getEmployees()
@@ -9,9 +10,9 @@ function Employees() {
       return {
         firstName: employee.firstName,
         lastName: employee.lastName,
-        startDate: employee.startDate,
+        startDate: dayjs(employee.startDate).format('DD/MM/YYYY'),
         department: employee.department,
-        birthDate: employee.birthDate,
+        birthDate: dayjs(employee.birthDate).format('DD/MM/YYYY'),
         street: employee.address.street,
         city: employee.address.city,
         state: employee.address.state,
