@@ -6,7 +6,12 @@
 
   & tbody {
     & td {
+      max-width: 100px;
+      width: 11%;
+      overflow: hidden;
+      text-overflow: ellipsis;
       text-align: center;
+      white-space: nowrap;
     }
     & tr {
       &:nth-child(2n + 1) {
