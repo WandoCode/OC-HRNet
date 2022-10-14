@@ -20,7 +20,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "start:prod": "node build/static/js/main.4cb6b76b.js"
   },
   "eslintConfig": {
     "extends": [
