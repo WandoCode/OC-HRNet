@@ -1,6 +1,9 @@
 .table {
   width: 100%;
 
+  &__select .select__label {
+    margin: 0;
+  }
   table {
     width: 100%;
     & thead {
@@ -27,8 +30,27 @@
       }
     }
   }
-
-  &__navigation {
+  & .navigation {
     padding: 10px 0;
+
+    &__btn {
+      font-size: 18px;
+      background-color: rgb(199, 199, 199);
+      border: none;
+      border-radius: 5px;
+      width: fit-content;
+      padding: 10px 30px;
+
+      &:hover {
+        background-color: darken(rgb(199, 199, 199), 10%);
+        cursor: pointer;
+      }
+    }
+    &__page {
+      background-color: rgba(255, 255, 255, 0);
+      &:hover {
+        background-color: rgba(255, 255, 255, 0);
+      }
+    }
   }
 }

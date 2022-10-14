@@ -221,6 +221,9 @@ form#create-employee .react-datepicker__day--outside-month {
 .table {
   width: 100%;
 }
+.table__select .select__label {
+  margin: 0;
+}
 .table table {
   width: 100%;
 }
@@ -241,6 +244,26 @@ form#create-employee .react-datepicker__day--outside-month {
 .table table tbody tr:hover {
   background-color: rgb(228, 228, 228);
 }
-.table__navigation {
+.table .navigation {
   padding: 10px 0;
+}
+.table .navigation__btn {
+  font-size: 18px;
+  background-color: rgb(199, 199, 199);
+  border: none;
+  border-radius: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 30px;
+}
+.table .navigation__btn:hover {
+  background-color: #aeaeae;
+  cursor: pointer;
+}
+.table .navigation__page {
+  background-color: rgba(255, 255, 255, 0);
+}
+.table .navigation__page:hover {
+  background-color: rgba(255, 255, 255, 0);
 }/*# sourceMappingURL=index.css.map */
