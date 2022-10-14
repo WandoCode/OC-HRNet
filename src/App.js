@@ -6,7 +6,8 @@ function App() {
 }
 
 export default App
-// TODO: mentor: Je dois ajouter des 'options' à mon composant?
+// TODO: mentor: Je dois ajouter des 'options' à mon composant? (ex: afficher le champ 'search', rendre le tri par colonne possible, donner le tri par défaut à l'ouverture, etc. )
+// TODO: mentor: Issue Tableau: il faut faire en sorte de update de le tableau en direct si un nouvel employé est ajouter ? (voir issue)
 // TODO: mentor: Issue Tableau: il faut faire en sorte de montrer que les nouvelles lignes apparaissent sans recharger l'ensemble du tableau? (voir issue)
 
 // TODO: mentor: Je dois encore changer le système de stockage
