@@ -48,7 +48,11 @@ const store = () => {
 
   const getEmployees = () => employees
 
-  return { addEmployee, getEmployees }
+  const clear = async () => {
+    await localStorage.removeItem('employees')
+  }
+
+  return { addEmployee, getEmployees, clear }
 }
 
 export default store
