@@ -1,8 +1,8 @@
-import departmentsJSON from '../../assets/formDatas.json'
-import store from '../../store/store'
+import departmentsJSON from '../assets/formDatas.json'
+import store from '../store/store'
 import { useState } from 'react'
-import Modale from '../modale/Modale'
-import Dropdown from '../Dropdown/Dropdown'
+import Modale from './Modale'
+import Dropdown from './Dropdown'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 

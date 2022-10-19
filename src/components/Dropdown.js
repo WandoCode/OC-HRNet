@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import arrowUp from '../../assets/caret-up.svg'
-import arrowDown from '../../assets/caret-down.svg'
+import arrowUp from '../assets/caret-up.svg'
+import arrowDown from '../assets/caret-down.svg'
 import OutsideClickHandler from 'react-outside-click-handler'
 function Dropdown({ choicesArray, onChoice, name }) {
   const [openMenu, setOpenMenu] = useState(false)

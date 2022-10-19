@@ -1,4 +1,4 @@
-import closeSVG from '../../assets/close.svg'
+import closeSVG from '../assets/close.svg'
 
 function Modale({ hideModale }) {
   const handleClose = () => {
