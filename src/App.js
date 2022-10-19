@@ -4,10 +4,12 @@ import populateDB from './mock/populate'
 import { useEffect } from 'react'
 
 function App() {
-  let dev = true
+  let dev = process.env.REACT_APP_DEV === 'true'
 
   useEffect(() => {
-    if (dev) populateDB()
+    if (dev) {
+      populateDB()
+    }
   }, [])
 
   return <Router />

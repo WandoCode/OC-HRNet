@@ -19,9 +19,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:dev": "set REACT_APP_DEV=true& react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "start:prod": "node build/static/js/main.4cb6b76b.js"
+    "start:prod": "serve -s build"
   },
   "eslintConfig": {
     "extends": [
