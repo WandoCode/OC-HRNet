@@ -206,6 +206,7 @@ form#create-employee .react-datepicker__day--outside-month {
 .dropdown input[type=radio] {
   height: 0;
   width: 0;
+  opacity: 0;
 }
 .dropdown__label {
   padding: 0 5px;
