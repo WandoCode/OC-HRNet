@@ -81,6 +81,7 @@ function CreateEmployeeForm() {
                 selected={inputs.birthDate}
                 onChange={(d) => setInputs({ ...inputs, birthDate: d })}
                 dateFormat="dd/MM/yyyy"
+                id={'birthDate'}
               />
             </label>
 
@@ -90,6 +91,7 @@ function CreateEmployeeForm() {
                 selected={inputs.startDate}
                 onChange={(d) => setInputs({ ...inputs, startDate: d })}
                 dateFormat="dd/MM/yyyy"
+                id={'startDate'}
               />
             </label>
 
@@ -125,7 +127,7 @@ function CreateEmployeeForm() {
                 value={inputs.city}
               />
             </label>
-            <label htmlFor="city" className="label">
+            <label htmlFor="state" className="label">
               State
               <Dropdown
                 choicesArray={statesChoices}

@@ -40,7 +40,13 @@ function Employees() {
     <main className="currentEmployees">
       <h2>Current Employees</h2>
       <div className="section">
-        <TableIndex headers={headers} datas={formatEmployeesObj()} />
+        <TableIndex
+          headers={headers}
+          datas={formatEmployeesObj()}
+          itemsByPageArr={[30, 50, 100]}
+          defaultItemsByPage={50}
+          defaultSort={'firstName'}
+        />
       </div>
     </main>
   )

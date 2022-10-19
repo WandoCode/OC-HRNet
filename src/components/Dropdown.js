@@ -43,6 +43,8 @@ function Dropdown({ choicesArray, onChoice, name }) {
           type="button"
           onClick={handleBtnClick}
           className="dropdown__selected"
+          id={name}
+          name={name}
         >
           {currValue}
           {openMenu ? (

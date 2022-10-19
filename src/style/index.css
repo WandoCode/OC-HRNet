@@ -247,6 +247,7 @@ form#create-employee .react-datepicker__day--outside-month {
 }
 .table .navigation {
   padding: 10px 0;
+  max-width: 60%;
 }
 .table .navigation__btn {
   font-size: 18px;
@@ -267,4 +268,8 @@ form#create-employee .react-datepicker__day--outside-month {
 }
 .table .navigation__page:hover {
   background-color: rgba(255, 255, 255, 0);
+}
+.table__search {
+  display: flex;
+  align-items: center;
 }/*# sourceMappingURL=index.css.map */
