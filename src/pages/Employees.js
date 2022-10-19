@@ -1,6 +1,7 @@
-import Table from 'plugin-table-oc'
+import TableIndex from 'plugin-table-oc'
 import store from '../store/store'
 import dayjs from 'dayjs'
+
 function Employees() {
   const myStore = store()
   const employees = myStore.getEmployees()
@@ -8,6 +9,7 @@ function Employees() {
   const formatEmployeesObj = () => {
     return employees.map((employee) => {
       return {
+        id: employee.id,
         firstName: employee.firstName,
         lastName: employee.lastName,
         startDate: dayjs(employee.startDate).format('DD/MM/YYYY'),
@@ -22,6 +24,7 @@ function Employees() {
   }
 
   const headers = {
+    id: 'id',
     firstName: 'First Name',
     lastName: 'Last Name',
     startDate: 'Start Date',
@@ -37,7 +40,7 @@ function Employees() {
     <main className="currentEmployees">
       <h2>Current Employees</h2>
       <div className="section">
-        <Table headers={headers} datas={formatEmployeesObj()} />
+        <TableIndex headers={headers} datas={formatEmployeesObj()} />
       </div>
     </main>
   )

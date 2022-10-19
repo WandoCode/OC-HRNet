@@ -9,6 +9,7 @@ function App() {
   useEffect(() => {
     if (dev) populateDB()
   }, [])
+
   return <Router />
 }
 
